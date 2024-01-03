@@ -5,11 +5,16 @@
   position: relative;
 }
 
-.imagecontainer{
+.heroimagecontainer{
   height: 100%;
   position: absolute;
   top: 0;
-  right: 0;
+  right: 50px;
+}
+
+.colorfulimg{
+  height: 530px;
+  width: 410px;
 }
 
 .wrapper{

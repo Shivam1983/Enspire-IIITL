@@ -4,7 +4,7 @@ import {motion} from 'framer-motion'
 function Links() {
 
   const items = [
-    "Home","Events","Gallery","Sponsors","contact"
+    "Home","Events","Sponsor","contact","About"
   ]
 
   const variants ={

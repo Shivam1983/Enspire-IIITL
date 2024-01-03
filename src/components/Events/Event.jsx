@@ -1,31 +1,31 @@
 import React from 'react'
 import './Event.css'
 import {motion , useScroll ,useSpring} from "framer-motion"
-import { useRef , useTransform } from 'react'
+import { useRef } from 'react'
 
 const intems = [
   {
     id:1,
     title:"AD-Arena",
-    img:"https://images.pexels.com/photos/943907/pexels-photo-943907.jpeg?auto=compress&cs=tinysrgb&w=600",
+    img:"/green1.jpg",
     desc:"Startup Expo is a one-day startup showcase fest during Enspire of IIIT Lucknow.",
   },
   {
     id:2,
     title:"Venturer",
-    img:"https://images.pexels.com/photos/732548/pexels-photo-732548.jpeg?auto=compress&cs=tinysrgb&w=600",
+    img:"/green2.jpg",
     desc:"The Entrepreneurial Showdown is an exciting game where participants receive a base investment and must strategically acquire undisclosed companies using provided product, sales, and dissolution data.",
   },
   {
     id:3,
     title:"Crypto",
-    img:"https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&w=600",
+    img:"/green3.jpg",
     desc:"Talent wins games, but teamwork and intelligence win championships. If you are wondering if this seems simple enough, here`s a twist. You dont know who your teammates are until the end. So, beware of who you help and who you don`t.",
   },
   {
     id:4,
     title:"IPL auction" ,
-    img:"https://images.pexels.com/photos/3789449/pexels-photo-3789449.jpeg?auto=compress&cs=tinysrgb&w=600",
+    img:"/green4.jpg",
     desc:"Always thought that you could create the best IPL team if only you had the money? Here is a chance to put yourself in the shoes of a bidder and build the team you always wanted to lift the coveted IPL trophy. This fun-filled event is a must for cricket lovers."
   },
 ]
@@ -35,21 +35,20 @@ const Single = ({item}) =>{
 
   const {scrollYProgress} = useScroll({ 
     target:ref,
+    offset: ["start start" , "end start"]
   })
 
-  // const y = useTransform (scrollYProgress, [0, 1], [-300,300] );
-
   return <section ref={ref}>
-    <div className="container">
-      <div className="wrapper">
+    <div className="eventcontainer">
+      <div className="eventwrapper">
 
-        <div className="imagecontainer">
-      <img src={item.img} alt="" />
+        <div className="eventimagecontainer">
+      <img className='eventimg' src={item.img} alt="" />
         </div>
-      <motion.div className='textContainer' /*style={{y}}*/>
-          <h2 >{item.title}</h2>
-        <p>{item.desc}</p>
-        {/* <button>Read more</button> */}
+      <motion.div className='eventtextContainer' >
+                <h2 className='Event-h2'>{item.title}</h2>
+        <p className='Event-p'>{item.desc}</p>
+        <button className='Event-button'>Read more</button>
       </motion.div>
       </div>
     </div>
@@ -71,7 +70,7 @@ function Event () {
   return (
     <div className='Event'>
       <div className="progress">
-        <h1>Events</h1>
+        <h1 id='Event-h1'>Events</h1>
         <motion.div style={{ scaleX}} className="progressBar"></motion.div>
       </div>
       {intems.map(item=>(

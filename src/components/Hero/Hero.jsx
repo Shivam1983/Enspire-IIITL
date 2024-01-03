@@ -44,8 +44,8 @@ function Hero() {
       <div className="wrapper">
         <motion.div className="textcontainer" variants={textvariants} initial="initial" animate="animate" >
         <motion.h2 variants={textvariants}><motion.span id='E-Ecell'>E</motion.span>CELL IIITL </motion.h2>
-        <motion.h1 variants={textvariants}><motion.span id='E2-enspire'>E</motion.span>nspire</motion.h1>
         <motion.h2 variants={textvariants}>PRESENTS</motion.h2>
+        <motion.h1 variants={textvariants}><motion.span id='E2-enspire'>E</motion.span>nspire</motion.h1>
         <motion.h1 variants={textvariants}><motion.span id='E2-enspire'>2</motion.span>023</motion.h1>
         
         <motion.img variants={textvariants} animate="scrollButton" src="/scroll.png" alt="#" />
@@ -56,9 +56,9 @@ function Hero() {
     Innovation Odessey
     </motion.div>
       
-      <div className="imagecontainer">
-        <img src="" alt="#" />
-      </div>
+      <motion.div className="heroimagecontainer" variants={textvariants} initial="initial" animate="animate">
+        <img className='colorfulimg' src="/catimage.webp" alt="#" />
+      </motion.div>
     </div>
   )
 }
